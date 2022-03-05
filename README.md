@@ -37,9 +37,7 @@ https://dotnet.microsoft.com/en-us/download/dotnet/thank-you/runtime-aspnetcore-
 - Sitecore CLI 4.1.1 (should be installed in the Sitecore instance)
 https://sitecoredev.azureedge.net/~/media/2B968036924A4EEB98C2E68641B63A43.ashx?date=20220127T085224
 
-- GoHorse.GraphQL (should be installed in the Sitecore instance)
-* Install this package by the Sitecore:  
- 
+* GoHorse.GraphQL (should be installed in the Sitecore instance)   
 [GoHorse-GraphQL-Ext-1.0.zip](/sc-packages/GoHorse-GraphQL-Ext-1.0.zip)
 
 ⟹ Sitecore CLI installation
