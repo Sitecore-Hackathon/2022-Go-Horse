@@ -16,9 +16,7 @@
 
 
 ## Video link
-⟹ Provide a video highlighing your Hackathon module submission and provide a link to the video. You can use any video hosting, file share or even upload the video to this repository. _Just remember to update the link below_
-
-⟹ [Replace this Video link](#video-link)
+[![Sitecore Hackathon 2022 - Go Horse Team](docs/images/image-thumbnail.jpg?raw=true)](https://www.youtube.com/watch?v=v2I7RFLJduc "Sitecore Hackathon 2022 - Go Horse Team")
 
 
 
@@ -77,7 +75,7 @@ dotnet sitecore login --authority https://<Sitecore identity server> --cm http:/
 The module comes with a test script that can be executed by the command below:
 
 ```powershell
-dotnet gohorse run-command --command-id "{11CE538E-5EA9-481A-8506-30F7DB03F308}"
+dotnet sitecore gohorse run-command --command-id "{11CE538E-5EA9-481A-8506-30F7DB03F308}"
 ```
 
 If the execution was successful, users will see a message "true" returned in the window.
@@ -89,7 +87,5 @@ When execution finishes you will be able to see that the PowerShell script has u
 
 #GoHorse
 
-![Hackathon Logo](docs/images/hackathon.png?raw=true "Hackathon Logo")
 
-## Comments
-If you'd like to make additional comments that is important for your module entry.
+![Hackathon Logo](docs/images/hackathon.png?raw=true "Hackathon Logo")
