@@ -1,4 +1,4 @@
-![Hackathon Logo](docs/images/hackathon.png?raw=true "Hackathon Logo")
+![Go Horse Cup](docs/images/gohorsecup.jpg?raw=true "Go Horse Cup")
 # Sitecore Hackathon 2022  
 
 ## Team name
