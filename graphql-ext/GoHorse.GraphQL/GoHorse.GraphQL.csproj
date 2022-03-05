@@ -1,0 +1,13 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <OutputType>Library</OutputType>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Sitecore.Kernel" Version="10.2.0" />
+    <PackageReference Include="Sitecore.Services.GraphQL" Version="10.1.0" />
+  </ItemGroup>
+
+</Project>

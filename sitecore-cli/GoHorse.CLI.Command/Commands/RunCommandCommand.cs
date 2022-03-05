@@ -28,7 +28,7 @@ namespace GoHorse.CLI.Command.Commands
 
         protected override async Task<int> Handle(RunCommandTask task, RunCommandArgs args)
         {
-            await task.Execute(args).ConfigureAwait(false);
+            await task.Execute(args, args.CommandId).ConfigureAwait(false);
             return 0;
         }
     }

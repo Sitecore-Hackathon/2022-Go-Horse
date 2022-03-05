@@ -13,6 +13,7 @@ using Sitecore.DevEx.Serialization.Client;
 using System;
 using System.Collections.Generic;
 using System.CommandLine;
+using GoHorse.CLI.Command.Dataservices;
 
 namespace GoHorse.CLI.Command
 {
@@ -37,6 +38,7 @@ namespace GoHorse.CLI.Command
         {
             serviceCollection.AddSerialization().AddSingleton<PublishCommand>()
                 .AddSingleton<ListOfTargetsCommand>()
+                .AddSingleton<IRunCommand,DataserviceRunCommand>()
                 .AddSingleton<RunCommandCommand>();
         }
 

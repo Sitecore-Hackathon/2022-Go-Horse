@@ -4,6 +4,7 @@
 // MVID: 8AB531F3-111F-41B9-B846-117170FE660B
 // Assembly location: C:\Users\RodrigoPeplau\Desktop\Sitecore.DevEx.Extensibility.Publishing.4.1.1\plugin\Sitecore.DevEx.Extensibility.Publishing.dll
 
+using GoHorse.CLI.Command.Dataservices;
 using Microsoft.Extensions.Logging;
 using Sitecore.DevEx.Client.Logging;
 using Sitecore.DevEx.Client.Tasks;
@@ -23,27 +24,38 @@ namespace GoHorse.CLI.Command.Tasks
         private readonly IRootConfigurationManager _rootConfigurationManager;
         private readonly ILogger _logger;
         private readonly IContentPublisher _contentPublisher;
+        private readonly IRunCommand _runCommand;
 
         public RunCommandTask(
           IRootConfigurationManager rootConfigurationManager,
           ILoggerFactory loggerFactory,
-          IContentPublisher contentPublisher)
+          IContentPublisher contentPublisher,
+          IRunCommand runCommand)
         {
             this._rootConfigurationManager = rootConfigurationManager ?? throw new ArgumentNullException(nameof(rootConfigurationManager));
             this._logger = (ILogger)loggerFactory.CreateLogger<PublishTask>();
             this._contentPublisher = contentPublisher;
+            _runCommand = runCommand;
         }
 
-        public async Task Execute(RunCommandOptions options)
+        public async Task Execute(RunCommandOptions options, string id)
         {
             ((TaskOptionsBase)options).Validate();
             EnvironmentConfiguration environmentConfiguration;
             if (!(await this._rootConfigurationManager.ResolveRootConfiguration(options.Config)).Environments.TryGetValue(options.EnvironmentName, out environmentConfiguration))
                 throw new InvalidConfigurationException("Environment " + options.EnvironmentName + " was not defined. Use the login command to define it.");
             Stopwatch stopwatch = Stopwatch.StartNew();
-            List<string> list = (await this._contentPublisher.GetListOfTargetsAsync(environmentConfiguration).ConfigureAwait(false)).ToList<string>();
+            //List<string> list = (await this._contentPublisher.GetListOfTargetsAsync(environmentConfiguration).ConfigureAwait(false)).ToList<string>();
+            List<string> list = (await this._runCommand.RunCommandAsync(environmentConfiguration, id).ConfigureAwait(false)).ToList<string>();
             stopwatch.Stop();
+
             this._logger.LogTrace(string.Format("Targets: Loaded in {0}ms ({1} targets).", (object)stopwatch.ElapsedMilliseconds, (object)list.Count));
+
+
+            // Run command
+
+
+
             if (list.Any<string>())
             {
                 ColorLogExtensions.LogConsoleInformation(this._logger, "Targets list:", new ConsoleColor?(ConsoleColor.Yellow), new ConsoleColor?());
