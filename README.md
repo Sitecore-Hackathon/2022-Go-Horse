@@ -12,7 +12,7 @@
 
  This plugin comes with a command that has the purpose of running a Sitecore Powershell Script.
 
- The Sitecore CLI gohorse plugin will decrease the dependency of having an open Sitecore instance, in a browser, to run a Powershell script. Now users will have infinity possibilities of managing the Sitecore CMS by the Sitecore CLI gohorse plugin.
+ The Sitecore CLI gohorse plugin will decrease the dependency of having an open Sitecore instance, in a browser, to run a Powershell script. Now users will have endless possibilities of managing the Sitecore CMS with the Sitecore CLI gohorse plugin.
 
 
 ## Video link
