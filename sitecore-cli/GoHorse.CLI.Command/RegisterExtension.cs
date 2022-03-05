@@ -20,8 +20,9 @@ namespace GoHorse.CLI.Command
     {
         public IEnumerable<ISubcommand> AddCommands(IServiceProvider container)
         {
-            PublishCommand requiredService = container.GetRequiredService<PublishCommand>();
-            ((System.CommandLine.Command)requiredService).AddCommand((System.CommandLine.Command)container.GetRequiredService<ListOfTargetsCommand>());
+            var requiredService = container.GetRequiredService<PublishCommand>();
+            requiredService.AddCommand(container.GetRequiredService<ListOfTargetsCommand>());
+            requiredService.AddCommand(container.GetRequiredService<RunCommandCommand>());
             return (IEnumerable<ISubcommand>)new ISubcommand[1]
             {
         (ISubcommand) requiredService
@@ -32,6 +33,13 @@ namespace GoHorse.CLI.Command
         {
         }
 
-        public void AddServices(IServiceCollection serviceCollection) => serviceCollection.AddSerialization().AddSingleton<PublishCommand>().AddSingleton<ListOfTargetsCommand>();
+        public void AddServices(IServiceCollection serviceCollection)
+        {
+            serviceCollection.AddSerialization().AddSingleton<PublishCommand>()
+                .AddSingleton<ListOfTargetsCommand>()
+                .AddSingleton<RunCommandCommand>();
+        }
+
+
     }
 }

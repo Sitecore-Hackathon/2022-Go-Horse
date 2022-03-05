@@ -6,7 +6,7 @@
     <PackageId>GoHorse.CLI.Command</PackageId>
     <Authors>GoHorse.CLI.Command</Authors>
     <Product>GoHorse.CLI.Command</Product>
-    <Version>1.0.6</Version>
+    <Version>1.0.7</Version>
     <Company>GoHorse.CLI.Command</Company>
   </PropertyGroup>
 
