@@ -53,7 +53,7 @@ namespace GoHorse.CLI.Command.Tasks
 
             if (list.Any<string>())
             {
-                ColorLogExtensions.LogConsoleInformation(this._logger, $"Results: PowerShell script successful executed {list[0]}", new ConsoleColor?(ConsoleColor.Yellow), new ConsoleColor?());
+                ColorLogExtensions.LogConsoleInformation(this._logger, $"Results: PowerShell script successful executed {id}", new ConsoleColor?(ConsoleColor.Yellow), new ConsoleColor?());
                 using (List<string>.Enumerator enumerator = list.GetEnumerator())
                 {
                     while (enumerator.MoveNext())

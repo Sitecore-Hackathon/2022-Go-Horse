@@ -30,9 +30,9 @@ namespace GoHorse.CLI.Command.Dataservices
 
             var result = this.CreateApiClient(environmentConfig).RunQuery<IEnumerable<string>>("/sitecore/api/management", new GraphQLRequest()
             {
-                Query = "\nquery($id: String){\n  whoAmI(id: $id)\n }",
+                Query = "\nquery($id: String){\n  runCommand(id: $id)\n }",
                 Variables = (object)dictionary
-            }, "whoAmI", cancellationToken);
+            }, "runCommand", cancellationToken);
 
             return result;
         }
