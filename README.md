@@ -51,7 +51,8 @@ https://doc.sitecore.com/xp/en/developers/102/developer-tools/install-sitecore-c
 -> dotnet tool restore
 
 You must see the message below before continuing:
-Restore was successful.
+
+* Restore was successful.
 
 ⟹ Sitecore CLI GoHorse Plugin
 
@@ -60,7 +61,8 @@ To Install the GoHorse plugin use command below:
 -> dotnet sitecore plugin add -n GoHorse.CLI.Command
 
 You must see the message below before continuing:
-Successfully installed version X.X.X of plugin GoHorse.CLI.Command
+
+* Successfully installed version X.X.X of plugin GoHorse.CLI.Command
 
 ### Configuration
 ⟹ If there are any custom configuration that has to be set manually then remember to add all details here.
