@@ -23,33 +23,30 @@
 
 
 ## Pre-requisites and Dependencies
-⟹ Sitecore 10.2 with Identity Server fully functional
+⟹ Sitecore 10.2 with Identity Server fully functional and PowerShell module
 
 ⟹ The Sitecore CLI gohorse plugin has the following dependencies below:
 
-- Dotnet SDK - 3.1.416 -x64
-https://dotnet.microsoft.com/en-us/download/dotnet/thank-you/sdk-3.1.416-windows-x64-installer
+* Dotnet SDK - 3.1.416 -x64
+https://dotnet.microsoft.com/en-us/download/dotnet/thank-you/sdk-3.1.416-windows-x64-installer  
 
-- Dotnet Hosting - 3.1.22
+* Dotnet Hosting - 3.1.22 
 https://dotnet.microsoft.com/en-us/download/dotnet/thank-you/runtime-aspnetcore-3.1.22-windows-hosting-bundle-installer
 
-- Sitecore CLI 4.1.1 (should be installed in the Sitecore instance)
+* Sitecore CLI 4.1.1 (using installation wizard)
 https://sitecoredev.azureedge.net/~/media/2B968036924A4EEB98C2E68641B63A43.ashx?date=20220127T085224
 
-* GoHorse.GraphQL (should be installed in the Sitecore instance)   
-[GoHorse-GraphQL-Ext-1.0.zip](/sc-packages/GoHorse-GraphQL-Ext-1.0.zip)
-
-⟹ Sitecore CLI installation
-- Follow the Sitecore documentation to install the Sitecore CLI plugin:
-https://doc.sitecore.com/xp/en/developers/102/developer-tools/install-sitecore-command-line-interface.html
+* GoHorse.GraphQL (using installation wizard)   
+[GoHorse-GraphQL-Ext-1.0.zip](/sc-packages/GoHorse-GraphQL-Ext-1.0.zip?raw=true)
 
 
 ## Installation instructions
-⟹ Open the project directory in the Powershell command window and run the command below:
+⟹ Open the git repository root in the Powershell command window and run the command below:
 
 ```powershell
 dotnet tool restore
 ```
+If any errors occurred during the command above, use the Sitecore official CLI documentation:  https://doc.sitecore.com/xp/en/developers/102/developer-tools/install-sitecore-command-line-interface.html
 
 You must see the message below before continuing:
 
@@ -67,10 +64,6 @@ You must see the message below before continuing:
 
 * Successfully installed version X.X.X of plugin GoHorse.CLI.Command
 
-### Configuration
-⟹ If there are any custom configuration that has to be set manually then remember to add all details here.
-
-_Remove this subsection if your entry does not require any configuration that is not fully covered in the installation instructions already_
 
 ## Usage instructions
 ⟹ Before running the new plugin, you must execute the Sitecore CLI login to authenticate in the Sitecore IdentityServer instance:
@@ -81,28 +74,15 @@ dotnet sitecore login --authority https://<Sitecore identity server> --cm http:/
 
 ![Sitecore CLI login](docs/images/sitecore-cli-login.png?raw=true "Sitecore CLI login")
 
-Use the command below to execute the command available:
+The module comes with a test script that can be executed by the command below:
 
 ```powershell
-dotnet gohorse run-command --command-id "{Sitecore PowerShell script ID}"
+dotnet gohorse run-command --command-id "{11CE538E-5EA9-481A-8506-30F7DB03F308}"
 ```
 
 If the execution was successful, users will see a message "true" returned in the window.
 
 ![Sitecore gohorse execution](docs/images/sitecore-gohorse-execution.png?raw=true "Sitecore gohorse execution")
-
-NOTE:
-If you do not have a Powershell script to test the plugin, open your Sitecore instance, and create a new one adding the code below (this script changes the Title field of the Home item, adding its text + "1"):
-
-```powershell
-$item = Get-Item -Path "master:\content\home"
-
-$item.Editing.BeginEdit()
-
-$item.Fields["Title"].Value = $item.Fields["Title"].Value + "1"
-
-$item.Editing.EndEdit()
-```
 
 #GoHorse
 
