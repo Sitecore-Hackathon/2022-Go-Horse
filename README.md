@@ -14,7 +14,6 @@
 
  The Sitecore CLI gohorse plugin will decrease the dependency of having an open Sitecore instance, in a browser, to run a Powershell script. Now users will have infinity possibilities of managing the Sitecore CMS by the Sitecore CLI gohorse plugin.
 
-_You can alternately paste a [link here](#docs) to a document within this repo containing the description._
 
 ## Video link
 ⟹ Provide a video highlighing your Hackathon module submission and provide a link to the video. You can use any video hosting, file share or even upload the video to this repository. _Just remember to update the link below_
