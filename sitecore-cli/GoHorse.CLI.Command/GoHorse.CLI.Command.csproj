@@ -1,0 +1,19 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <PackageId>GoHorse.CLI.Command</PackageId>
+    <Authors>GoHorse.CLI.Command</Authors>
+    <Product>GoHorse.CLI.Command</Product>
+    <Version>1.0.6</Version>
+    <Company>GoHorse.CLI.Command</Company>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Sitecore.Devex.Client.Cli.Extensibility" Version="4.1.1" />
+    <PackageReference Include="Sitecore.DevEx.Extensibility.Publishing" Version="4.1.1" />
+    <PackageReference Include="Sitecore.DevEx.Serialization.Client" Version="4.1.1" />
+  </ItemGroup>
+
+</Project>
