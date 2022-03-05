@@ -84,6 +84,9 @@ If the execution was successful, users will see a message "true" returned in the
 
 ![Sitecore gohorse execution](docs/images/sitecore-gohorse-execution.png?raw=true "Sitecore gohorse execution")
 
+When execution finishes you will be able to see that the PowerShell script has updated the home item, title field, adding the text "1" to its value.
+![Sitecore Home Updated](docs/images/Sitecore-Home-updated.png?raw=true "Sitecore Home Updated")
+
 #GoHorse
 
 ![Hackathon Logo](docs/images/hackathon.png?raw=true "Hackathon Logo")
