@@ -37,16 +37,16 @@ https://dotnet.microsoft.com/en-us/download/dotnet/thank-you/runtime-aspnetcore-
 https://sitecoredev.azureedge.net/~/media/2B968036924A4EEB98C2E68641B63A43.ashx?date=20220127T085224
 
 - GoHorse.GraphQL (should be installed in the Sitecore instance)
-TODO: [PACKAGE URL]
-TODO: [Sitecore.IdentityServer.DevEx.xml]
+* TODO: [PACKAGE URL]
+* TODO: [Sitecore.IdentityServer.DevEx.xml]
 
 ⟹ Sitecore CLI installation
-- Follow the below Sitecore documentation to install the Sitecore CLI plugin:
+- Follow the Sitecore documentation to install the Sitecore CLI plugin:
 https://doc.sitecore.com/xp/en/developers/102/developer-tools/install-sitecore-command-line-interface.html
 
 
 ## Installation instructions
-⟹Open the project directory in the Powershell command window and run the command below:
+⟹ Open the project directory in the Powershell command window and run the command below:
 
 -> dotnet tool restore
 
@@ -95,17 +95,9 @@ $item.Fields["Title"].Value = $item.Fields["Title"].Value + "1"
 
 $item.Editing.EndEdit()
 
-
+#GoHorse
 
 ![Hackathon Logo](docs/images/hackathon.png?raw=true "Hackathon Logo")
-
-You can embed images of different formats too:
-
-![Deal With It](docs/images/deal-with-it.gif?raw=true "Deal With It")
-
-And you can embed external images too:
-
-![Random](https://thiscatdoesnotexist.com/)
 
 ## Comments
 If you'd like to make additional comments that is important for your module entry.
