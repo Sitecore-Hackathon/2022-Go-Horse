@@ -48,7 +48,9 @@ https://doc.sitecore.com/xp/en/developers/102/developer-tools/install-sitecore-c
 ## Installation instructions
 ⟹ Open the project directory in the Powershell command window and run the command below:
 
--> dotnet tool restore
+```powershell
+dotnet tool restore
+```
 
 You must see the message below before continuing:
 
@@ -58,7 +60,9 @@ You must see the message below before continuing:
 
 To Install the GoHorse plugin use command below:
 
--> dotnet sitecore plugin add -n GoHorse.CLI.Command
+```powershell
+dotnet sitecore plugin add -n GoHorse.CLI.Command
+```
 
 You must see the message below before continuing:
 
@@ -72,13 +76,17 @@ _Remove this subsection if your entry does not require any configuration that is
 ## Usage instructions
 ⟹ Before running the new plugin, you must execute the Sitecore CLI login to authenticate in the Sitecore IdentityServer instance:
 
--> dotnet sitecore login --authority https://<Sitecore identity server> --cm http://<Sitecore instance> --allow-write true
+```powershell
+dotnet sitecore login --authority https://<Sitecore identity server> --cm http://<Sitecore instance> --allow-write true
+```
 
 ![Sitecore CLI login](docs/images/sitecore-cli-login.png?raw=true "Sitecore CLI login")
 
 Use the command below to execute the command available:
 
--> dotnet gohorse run-command --command-id "{Sitecore PowerShell script ID}"
+```powershell
+dotnet gohorse run-command --command-id "{Sitecore PowerShell script ID}"
+```
 
 If the execution was successful, users will see a message "true" returned in the window.
 
