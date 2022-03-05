@@ -24,6 +24,7 @@ _You can alternately paste a [link here](#docs) to a document within this repo c
 
 
 ## Pre-requisites and Dependencies
+⟹ Sitecore 10.2 with Identity Server fully functional
 
 ⟹ The Sitecore CLI gohorse plugin has the following dependencies below:
 
