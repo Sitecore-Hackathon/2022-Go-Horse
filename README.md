@@ -77,14 +77,14 @@ f. ex.
 
 ----------------
 
-- Open the project directory in the Powershell command window and run the command below:
+Open the project directory in the Powershell command window and run the command below:
 -> dotnet tool restore
 You must see the message below before continuing:
 Restore was successful.
 
 ⟹ Sitecore CLI GoHorse Plugin
 
-- To Install the GoHorse plugin use command below:
+To Install the GoHorse plugin use command below:
 -> dotnet sitecore plugin add -n GoHorse.CLI.Command
 You must see the message below before continuing:
 Successfully installed version X.X.X of plugin GoHorse.CLI.Command
@@ -98,13 +98,15 @@ _Remove this subsection if your entry does not require any configuration that is
 ⟹ Provide documentation about your module, how do the users use your module, where are things located, what do the icons mean, are there any secret shortcuts etc.
 
 ------------------
-- Before running the new plugin, you must execute the Sitecore CLI login to authenticate in the Sitecore IdentityServer instance:
+Before running the new plugin, you must execute the Sitecore CLI login to authenticate in the Sitecore IdentityServer instance:
 -> dotnet sitecore login --authority https://<Sitecore identity server> --cm http://<Sitecore instance> --allow-write true
+
 ![Sitecore CLI login](docs/images/sitecore-cli-login.png?raw=true "Sitecore CLI login")
 
 Use the command below to execute the command available:
 -> dotnet gohorse run-command --command-id "{Sitecore PowerShell script ID}"
 If the execution was successful, users will see a message "true" returned in the window.
+
 ![Sitecore gohorse execution](docs/images/sitecore-gohorse-execution.png?raw=true "Sitecore gohorse execution")
 
 NOTE:
