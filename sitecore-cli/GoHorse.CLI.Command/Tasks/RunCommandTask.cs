@@ -49,16 +49,11 @@ namespace GoHorse.CLI.Command.Tasks
             List<string> list = (await this._runCommand.RunCommandAsync(environmentConfiguration, id).ConfigureAwait(false)).ToList<string>();
             stopwatch.Stop();
 
-            this._logger.LogTrace(string.Format("Targets: Loaded in {0}ms ({1} targets).", (object)stopwatch.ElapsedMilliseconds, (object)list.Count));
-
-
-            // Run command
-
-
+            this._logger.LogTrace(string.Format("Results: Loaded in {0}ms ({1}).", (object)stopwatch.ElapsedMilliseconds, (object)list.Count));
 
             if (list.Any<string>())
             {
-                ColorLogExtensions.LogConsoleInformation(this._logger, "Targets list:", new ConsoleColor?(ConsoleColor.Yellow), new ConsoleColor?());
+                ColorLogExtensions.LogConsoleInformation(this._logger, $"Results: PowerShell script successful executed {list[0]}", new ConsoleColor?(ConsoleColor.Yellow), new ConsoleColor?());
                 using (List<string>.Enumerator enumerator = list.GetEnumerator())
                 {
                     while (enumerator.MoveNext())
@@ -69,7 +64,7 @@ namespace GoHorse.CLI.Command.Tasks
             }
             else
             {
-                ColorLogExtensions.LogConsoleInformation(this._logger, string.Format("Sitecore Cli didn't find any publishing targets on {0}", (object)environmentConfiguration.Host), new ConsoleColor?(ConsoleColor.Red), new ConsoleColor?());
+                ColorLogExtensions.LogConsoleInformation(this._logger, $"Sitecore CLI GoHorse didn't find any PowerShell script with the ID {id} in {(object)environmentConfiguration.Host}", new ConsoleColor?(ConsoleColor.Red), new ConsoleColor?());
                 environmentConfiguration = (EnvironmentConfiguration)null;
                 stopwatch = (Stopwatch)null;
             }
