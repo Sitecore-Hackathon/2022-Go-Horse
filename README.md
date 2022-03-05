@@ -77,7 +77,7 @@ dotnet sitecore login --authority https://<Sitecore identity server> --cm http:/
 The module comes with a test script that can be executed by the command below:
 
 ```powershell
-dotnet gohorse run-command --command-id "{11CE538E-5EA9-481A-8506-30F7DB03F308}"
+dotnet sitecore gohorse run-command --command-id "{11CE538E-5EA9-481A-8506-30F7DB03F308}"
 ```
 
 If the execution was successful, users will see a message "true" returned in the window.
