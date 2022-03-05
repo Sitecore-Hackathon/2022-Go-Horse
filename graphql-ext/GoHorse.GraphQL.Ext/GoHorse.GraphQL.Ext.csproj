@@ -341,7 +341,7 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />
-    <None Include="App_Config\Includes\GoHorse.GraphQL.config" />
+    <None Include="App_Config\Include\GoHorse.GraphQL.config" />
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup />

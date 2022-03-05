@@ -44,31 +44,45 @@ namespace GoHorse.GraphQL.Ext.Providers
             {
                 string id = context.GetArgument<string>("id");
 
-                // Run script
-                using (ScriptSession scriptSession = ScriptSessionManager.NewSession("Default", true))
+                try
                 {
-                    var contextDb = Sitecore.Context.Database;
-                    Sitecore.Context.Database = Sitecore.Configuration.Factory.GetDatabase("master");
+                    // Run script
+                    using (ScriptSession scriptSession = ScriptSessionManager.NewSession("Default", true))
+                    {
+                        var contextDb = Sitecore.Context.Database;
+                        Sitecore.Context.Database = Sitecore.Configuration.Factory.GetDatabase("master");
 
-                    Item speScriptItem = Sitecore.Context.Database.GetItem(id);
-                    if (speScriptItem != null){
-                        string script = speScriptItem["Script"];
-                        if (!string.IsNullOrEmpty(script))
-                        {
-                            scriptSession.ExecuteScriptPart(script);
+                        Item speScriptItem = Sitecore.Context.Database.GetItem(id);
+                        if (speScriptItem != null){
+                            string script = speScriptItem["Script"];
+                            if (!string.IsNullOrEmpty(script))
+                            {
+                                scriptSession.ExecuteScriptPart(script);
+                            }
                         }
+
+                        Sitecore.Context.Database = contextDb;
                     }
 
-                    Sitecore.Context.Database = contextDb;
+
+                }
+                catch (Exception error)
+                {
+                    var errorList = new List<string>
+                    {
+                        "false : " + error.Message
+                    };
+                    return errorList;
                 }
 
                 // this is the object the resolver maps onto the graph type
                 // (see UserGraphType below). This is your own domain object, not GraphQL-specific.
                 var ret = new List<string>
                 {
-                    id
+                    "true"
                 };
                 return ret;
+                
             }
         }
 
