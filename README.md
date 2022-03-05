@@ -87,6 +87,7 @@ If the execution was successful, users will see a message "true" returned in the
 NOTE:
 If you do not have a Powershell script to test the plugin, open your Sitecore instance, and create a new one adding the code below (this script changes the Title field of the Home item, adding its text + "1"):
 
+```powershell
 $item = Get-Item -Path "master:\content\home"
 
 $item.Editing.BeginEdit()
@@ -94,6 +95,7 @@ $item.Editing.BeginEdit()
 $item.Fields["Title"].Value = $item.Fields["Title"].Value + "1"
 
 $item.Editing.EndEdit()
+```
 
 #GoHorse
 
