@@ -1,12 +1,5 @@
 ![Hackathon Logo](docs/images/hackathon.png?raw=true "Hackathon Logo")
-# Sitecore Hackathon 2022
-
-- MUST READ: **[Submission requirements](SUBMISSION_REQUIREMENTS.md)**
-- [Entry form template](ENTRYFORM.md)
-- [Starter kit instructions](STARTERKIT_INSTRUCTIONS.md)
-  
-
-### ⟹ [Insert your documentation here](ENTRYFORM.md) <<
+# Sitecore Hackathon 2022  
 
 ## Team name
 ⟹ GoHorse
@@ -53,39 +46,19 @@ https://doc.sitecore.com/xp/en/developers/102/developer-tools/install-sitecore-c
 
 
 ## Installation instructions
-⟹ Write a short clear step-wise instruction on how to install your module.  
+⟹Open the project directory in the Powershell command window and run the command below:
 
-> _A simple well-described installation process is required to win the Hackathon._  
-> Feel free to use any of the following tools/formats as part of the installation:
-> - Sitecore Package files
-> - Docker image builds
-> - Sitecore CLI
-> - msbuild
-> - npm / yarn
-> 
-> _Do not use_
-> - TDS
-> - Unicorn
- 
-f. ex. 
-
-1. Start docker environment using `.\Start-Hackathon.ps1`
-2. Open solution in Visual Studio and run build
-3. Use the Sitecore Installation wizard to install the [package](#link-to-package)
-4. ...
-5. profit
-
-----------------
-
-Open the project directory in the Powershell command window and run the command below:
 -> dotnet tool restore
+
 You must see the message below before continuing:
 Restore was successful.
 
 ⟹ Sitecore CLI GoHorse Plugin
 
 To Install the GoHorse plugin use command below:
+
 -> dotnet sitecore plugin add -n GoHorse.CLI.Command
+
 You must see the message below before continuing:
 Successfully installed version X.X.X of plugin GoHorse.CLI.Command
 
@@ -95,16 +68,16 @@ Successfully installed version X.X.X of plugin GoHorse.CLI.Command
 _Remove this subsection if your entry does not require any configuration that is not fully covered in the installation instructions already_
 
 ## Usage instructions
-⟹ Provide documentation about your module, how do the users use your module, where are things located, what do the icons mean, are there any secret shortcuts etc.
+⟹ Before running the new plugin, you must execute the Sitecore CLI login to authenticate in the Sitecore IdentityServer instance:
 
-------------------
-Before running the new plugin, you must execute the Sitecore CLI login to authenticate in the Sitecore IdentityServer instance:
 -> dotnet sitecore login --authority https://<Sitecore identity server> --cm http://<Sitecore instance> --allow-write true
 
 ![Sitecore CLI login](docs/images/sitecore-cli-login.png?raw=true "Sitecore CLI login")
 
 Use the command below to execute the command available:
+
 -> dotnet gohorse run-command --command-id "{Sitecore PowerShell script ID}"
+
 If the execution was successful, users will see a message "true" returned in the window.
 
 ![Sitecore gohorse execution](docs/images/sitecore-gohorse-execution.png?raw=true "Sitecore gohorse execution")
@@ -120,9 +93,7 @@ $item.Fields["Title"].Value = $item.Fields["Title"].Value + "1"
 
 $item.Editing.EndEdit()
 
-------------------
 
-Include screenshots where necessary. You can add images to the `./images` folder and then link to them from your documentation:
 
 ![Hackathon Logo](docs/images/hackathon.png?raw=true "Hackathon Logo")
 
