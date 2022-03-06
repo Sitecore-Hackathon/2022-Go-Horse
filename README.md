@@ -3,6 +3,9 @@
 
 ## Team name
 ⟹ GoHorse
+- José Neto
+- Roberto de Almeida Jr.
+- Rodrigo Peplau 
 
 ## Category
 ⟹ Extend the Sitecore Command Line interface (CLI) plugin
