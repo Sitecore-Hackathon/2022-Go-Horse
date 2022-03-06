@@ -8,14 +8,14 @@
 - Rodrigo Peplau 
 
 ## Category
-⟹ Extend the Sitecore Command Line interface (CLI) plugin
+⟹ **Extend the Sitecore Command Line interface (CLI) plugin**
 
 ## Description
-⟹ This module extends the Sitecore CLI plugin, adding a new plugin named gohorse
+⟹ This module extends the Sitecore CLI plugin, adding a new plugin named "gohorse"
 
  This plugin comes with a command that has the purpose of running a Sitecore Powershell Script.
 
- The Sitecore CLI gohorse plugin will decrease the dependency of having an open Sitecore instance, in a browser, to run a Powershell script. Now users will have endless possibilities of managing the Sitecore CMS with the Sitecore CLI gohorse plugin.
+ The Sitecore CLI gohorse plugin will decrease the dependency of having an open Sitecore instance, in a browser, to run a Powershell script. Now there are endless possibilities of managing the Sitecore XP with the Sitecore CLI gohorse plugin.
 
 
 ## Video link
