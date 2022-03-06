@@ -2,7 +2,7 @@
 # Sitecore Hackathon 2022  
 
 ## Team name
-⟹ GoHorse
+⟹ **Go Horse**
 - José Neto
 - Roberto de Almeida Jr.
 - Rodrigo Peplau 
