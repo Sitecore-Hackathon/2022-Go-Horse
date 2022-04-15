@@ -1,10 +1,4 @@
-﻿// Decompiled with JetBrains decompiler
-// Type: Sitecore.DevEx.Extensibility.Publishing.Tasks.ListOfTargetsTask
-// Assembly: Sitecore.DevEx.Extensibility.Publishing, Version=4.1.0.0, Culture=neutral, PublicKeyToken=null
-// MVID: 8AB531F3-111F-41B9-B846-117170FE660B
-// Assembly location: C:\Users\RodrigoPeplau\Desktop\Sitecore.DevEx.Extensibility.Publishing.4.1.1\plugin\Sitecore.DevEx.Extensibility.Publishing.dll
-
-using GoHorse.CLI.Command.Dataservices;
+﻿using GoHorse.CLI.Command.Dataservices;
 using Microsoft.Extensions.Logging;
 using Sitecore.DevEx.Client.Logging;
 using Sitecore.DevEx.Client.Tasks;
@@ -33,7 +27,7 @@ namespace GoHorse.CLI.Command.Tasks
           IRunCommand runCommand)
         {
             this._rootConfigurationManager = rootConfigurationManager ?? throw new ArgumentNullException(nameof(rootConfigurationManager));
-            this._logger = (ILogger)loggerFactory.CreateLogger<PublishTask>();
+            this._logger = (ILogger)loggerFactory.CreateLogger<RunCommandTask>();
             this._contentPublisher = contentPublisher;
             _runCommand = runCommand;
         }
@@ -49,7 +43,7 @@ namespace GoHorse.CLI.Command.Tasks
             List<string> list = (await this._runCommand.RunCommandAsync(environmentConfiguration, id).ConfigureAwait(false)).ToList<string>();
             stopwatch.Stop();
 
-            this._logger.LogTrace(string.Format("Results: Loaded in {0}ms ({1}).", (object)stopwatch.ElapsedMilliseconds, (object)list.Count));
+            _logger.LogTrace(string.Format("Results: Loaded in {0}ms ({1}).", (object)stopwatch.ElapsedMilliseconds, (object)list.Count));
 
             if (list.Any<string>())
             {

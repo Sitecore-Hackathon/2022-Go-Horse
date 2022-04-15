@@ -5,7 +5,6 @@ using Sitecore.DevEx.Configuration.Models;
 using Sitecore.DevEx.Serialization.Client.Datasources.Sc;
 using System;
 using System.Collections.Generic;
-using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 
@@ -43,6 +42,5 @@ namespace GoHorse.CLI.Command.Dataservices
             apiClient.Endpoint = environmentConfig;
             return apiClient;
         }
-
     }
 }

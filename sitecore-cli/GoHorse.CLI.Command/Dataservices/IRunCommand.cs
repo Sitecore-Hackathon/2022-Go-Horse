@@ -1,5 +1,4 @@
 ﻿using Sitecore.DevEx.Configuration.Models;
-using Sitecore.DevEx.Serialization.Client.Publishing;
 using System.Collections.Generic;
 using System.Threading;
 using System.Threading.Tasks;
