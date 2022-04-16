@@ -14,7 +14,7 @@ namespace GoHorse.CLI.Command
     {
         public IEnumerable<ISubcommand> AddCommands(IServiceProvider container)
         {
-            var requiredService = container.GetRequiredService<RunCommandCommand>();
+            var requiredService = container.GetRequiredService<SpeCommand>();
             //requiredService.AddCommand(container.GetRequiredService<RunCommandCommand>());
             return new ISubcommand[1] { requiredService };
         }
@@ -26,8 +26,8 @@ namespace GoHorse.CLI.Command
         public void AddServices(IServiceCollection serviceCollection)
         {
             serviceCollection.AddSerialization()
-                .AddSingleton<IRunCommand, DataserviceRunCommand>()
-                .AddSingleton<RunCommandCommand>();
+                .AddSingleton<ISpe, DataserviceSpe>()
+                .AddSingleton<SpeCommand>();
         }
     }
 }

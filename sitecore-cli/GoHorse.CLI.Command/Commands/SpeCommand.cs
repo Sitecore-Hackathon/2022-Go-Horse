@@ -7,16 +7,16 @@ using System.Threading.Tasks;
 namespace GoHorse.CLI.Command.Commands
 {
     [ExcludeFromCodeCoverage]
-    public class RunCommandCommand : SubcommandBase<RunCommandTask, RunCommandArgs>
+    public class SpeCommand : SubcommandBase<SpeTask, SpeCommandArgs>
     {
-        public RunCommandCommand(IServiceProvider container)
-          : base("run-command", "Executes a command in the Sitecore instance", container)
+        public SpeCommand(IServiceProvider container)
+          : base("spe", "Executes a Powershell Script in the Sitecore instance", container)
         {
             ((System.CommandLine.Command)this).AddOption(ArgOptions.CommandId);
             ((System.CommandLine.Command)this).AddOption(ArgOptions.Verbose);
         }
 
-        protected override async Task<int> Handle(RunCommandTask task, RunCommandArgs args)
+        protected override async Task<int> Handle(SpeTask task, SpeCommandArgs args)
         {
             await task.Execute(args, args.CommandId).ConfigureAwait(false);
             return 0;

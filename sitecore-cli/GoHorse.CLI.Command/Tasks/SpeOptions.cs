@@ -4,7 +4,7 @@ using System.Diagnostics.CodeAnalysis;
 
 namespace GoHorse.CLI.Command.Tasks
 {
-    public class RunCommandOptions : TaskOptionsBase
+    public class SpeOptions : TaskOptionsBase
     {
         public string CommandId { get; set; }
         public string Config { get; set; }

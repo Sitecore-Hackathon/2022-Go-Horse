@@ -13,34 +13,31 @@ using System.Threading.Tasks;
 
 namespace GoHorse.CLI.Command.Tasks
 {
-    public class RunCommandTask
+    public class SpeTask
     {
         private readonly IRootConfigurationManager _rootConfigurationManager;
         private readonly ILogger _logger;
-        private readonly IContentPublisher _contentPublisher;
-        private readonly IRunCommand _runCommand;
+        private readonly ISpe _runCommand;
 
-        public RunCommandTask(
+        public SpeTask(
           IRootConfigurationManager rootConfigurationManager,
           ILoggerFactory loggerFactory,
           IContentPublisher contentPublisher,
-          IRunCommand runCommand)
+          ISpe runCommand)
         {
             this._rootConfigurationManager = rootConfigurationManager ?? throw new ArgumentNullException(nameof(rootConfigurationManager));
-            this._logger = (ILogger)loggerFactory.CreateLogger<RunCommandTask>();
-            this._contentPublisher = contentPublisher;
+            this._logger = (ILogger)loggerFactory.CreateLogger<SpeTask>();
             _runCommand = runCommand;
         }
 
-        public async Task Execute(RunCommandOptions options, string id)
+        public async Task Execute(SpeOptions options, string id)
         {
             ((TaskOptionsBase)options).Validate();
             EnvironmentConfiguration environmentConfiguration;
             if (!(await this._rootConfigurationManager.ResolveRootConfiguration(options.Config)).Environments.TryGetValue(options.EnvironmentName, out environmentConfiguration))
                 throw new InvalidConfigurationException("Environment " + options.EnvironmentName + " was not defined. Use the login command to define it.");
             Stopwatch stopwatch = Stopwatch.StartNew();
-            //List<string> list = (await this._contentPublisher.GetListOfTargetsAsync(environmentConfiguration).ConfigureAwait(false)).ToList<string>();
-            List<string> list = (await this._runCommand.RunCommandAsync(environmentConfiguration, id).ConfigureAwait(false)).ToList<string>();
+            List<string> list = (await this._runCommand.SpeAsync(environmentConfiguration, id).ConfigureAwait(false)).ToList<string>();
             stopwatch.Stop();
 
             _logger.LogTrace(string.Format("Results: Loaded in {0}ms ({1}).", (object)stopwatch.ElapsedMilliseconds, (object)list.Count));

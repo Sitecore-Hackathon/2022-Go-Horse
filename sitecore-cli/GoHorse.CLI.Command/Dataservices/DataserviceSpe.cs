@@ -10,17 +10,17 @@ using System.Threading.Tasks;
 
 namespace GoHorse.CLI.Command.Dataservices
 {
-    internal class DataserviceRunCommand : IRunCommand
+    internal class DataserviceSpe : ISpe
     {
         private readonly Func<ISitecoreApiClient> _apiClientFactory;
 
-        public DataserviceRunCommand(IServiceProvider serviceProvider)
+        public DataserviceSpe(IServiceProvider serviceProvider)
         {
             AssertionExtensions.ThrowIfNull<IServiceProvider>(serviceProvider, nameof(serviceProvider));
             this._apiClientFactory = new Func<ISitecoreApiClient>((serviceProvider).GetRequiredService<ISitecoreApiClient>);
         }
 
-        public Task<IEnumerable<string>> RunCommandAsync(EnvironmentConfiguration environmentConfig, string id, CancellationToken cancellationToken = default)
+        public Task<IEnumerable<string>> SpeAsync(EnvironmentConfiguration environmentConfig, string id, CancellationToken cancellationToken = default)
         {
             IDictionary<string, string> dictionary = (IDictionary<string, string>)new Dictionary<string, string>()
             {
