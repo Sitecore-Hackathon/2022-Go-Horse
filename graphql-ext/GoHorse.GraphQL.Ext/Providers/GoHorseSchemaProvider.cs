@@ -1,14 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Web;
-using GraphQL.Resolvers;
 using GraphQL.Types;
-using Sitecore;
-using Sitecore.Common;
-using Sitecore.Security.Accounts;
 using Sitecore.Services.GraphQL.Schemas;
 using Sitecore.Data.Items;
 using Spe.Core.Host;
+using System.Linq;
 
 namespace GoHorse.GraphQL.Ext.Providers
 {
@@ -26,15 +22,14 @@ namespace GoHorse.GraphQL.Ext.Providers
                 QueryArgument[] queryArgumentArray = new QueryArgument[1];
                 QueryArgument<StringGraphType> queryArgument = new QueryArgument<StringGraphType>();
                 queryArgument.Name = "id";
-                queryArgument.Description = "The command ID to run.";
+                queryArgument.Description = "The script ID to run.";
                 queryArgumentArray[0] = (QueryArgument)queryArgument;
                 ((FieldType)this).Arguments = new QueryArguments(queryArgumentArray);
             }
 
             protected override IEnumerable<string> Resolve(ResolveFieldContext context)
             {
-                string id = context.GetArgument<string>("id");
-
+                var id = context.GetArgument<string>("id");
                 try
                 {
                     // Run script
@@ -48,32 +43,27 @@ namespace GoHorse.GraphQL.Ext.Providers
                             string script = speScriptItem["Script"];
                             if (!string.IsNullOrEmpty(script))
                             {
-                                scriptSession.ExecuteScriptPart(script);
+                                scriptSession.ExecuteScriptPart(script, true);
                             }
                         }
 
                         Sitecore.Context.Database = contextDb;
+
+                        var ret = new List<string>();
+                        ret = scriptSession.Output.Select(p => p.Text[p.Text.Length-1]=='\n' ? p.Text.Substring(0, p.Text.Length-1) : p.Text).ToList();
+                        if (!ret.Any())
+                            ret.Add("Ok!");
+                        return ret;
                     }
-
-
                 }
                 catch (Exception error)
                 {
                     var errorList = new List<string>
                     {
-                        "false : " + error.Message
+                        "ERROR: " + error.Message
                     };
                     return errorList;
                 }
-
-                // this is the object the resolver maps onto the graph type
-                // (see UserGraphType below). This is your own domain object, not GraphQL-specific.
-                var ret = new List<string>
-                {
-                    "true"
-                };
-                return ret;
-                
             }
         }
     }

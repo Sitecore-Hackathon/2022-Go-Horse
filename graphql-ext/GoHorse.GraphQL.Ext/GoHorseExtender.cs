@@ -1,8 +1,4 @@
-﻿using GraphQL.Resolvers;
-using GraphQL.Types;
-using Sitecore.Data.Fields;
-using Sitecore.Services.GraphQL.Schemas;
-using FieldType = GraphQL.Types.FieldType;
+﻿using Sitecore.Services.GraphQL.Schemas;
 
 namespace GoHorse.GraphQL
 {
@@ -10,7 +6,6 @@ namespace GoHorse.GraphQL
     {
         public GoHorseExtender()
         {
-            // Extend the 'Appearance' graph type
             ExtendType("Query", type =>
             {
                 type.Description = "Go Horse extender";
