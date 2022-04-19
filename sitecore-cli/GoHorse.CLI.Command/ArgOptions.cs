@@ -19,6 +19,24 @@ namespace GoHorse.CLI.Command
                 Argument = (Argument)new Argument<string>((Func<string>)(() => string.Empty))
             };
 
+        internal static readonly Option Script =
+            new Option(new string[2] { "--script", "-s" }, "Powershell script inline command to be executed")
+            {
+                Argument = (Argument)new Argument<string>((Func<string>)(() => string.Empty))
+            };
+
+        internal static readonly Option File =
+            new Option(new string[2] { "--file", "-f" }, "Local Powershell script file to be executed remotely")
+            {
+                Argument = (Argument)new Argument<string>((Func<string>)(() => string.Empty))
+            };
+
+        internal static readonly Option SessionId =
+            new Option(new string[2] { "--session", "-ses" }, "SessionId to be used as the Powershell session (default: 'Default')")
+            {
+                Argument = (Argument)new Argument<string>((Func<string>)(() => string.Empty))
+            };
+
         internal static readonly Option Verbose =
             new Option(new string[2] { "--verbose", "-v" }, "Write some additional diagnostic and performance data")
             {

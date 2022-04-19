@@ -6,7 +6,10 @@ namespace GoHorse.CLI.Command.Tasks
 {
     public class SpeOptions : TaskOptionsBase
     {
+        public string SessionId { get; set; }
         public string ScriptId { get; set; }
+        public string File { get; set; }
+        public string Script { get; set; }
         public string Config { get; set; }
         public string EnvironmentName { get; set; }
 
@@ -15,9 +18,9 @@ namespace GoHorse.CLI.Command.Tasks
 
         public override void Validate()
         {
-            this.Require("ScriptId");
             this.Require("Config");
             this.Default("EnvironmentName", (object)"default");
+            this.Default("SessionId", (object)"Default");
         }
     }
 }

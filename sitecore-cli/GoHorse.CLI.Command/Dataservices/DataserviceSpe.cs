@@ -20,18 +20,36 @@ namespace GoHorse.CLI.Command.Dataservices
             this._apiClientFactory = new Func<ISitecoreApiClient>((serviceProvider).GetRequiredService<ISitecoreApiClient>);
         }
 
-        public Task<IEnumerable<string>> SpeAsync(EnvironmentConfiguration environmentConfig, string id, CancellationToken cancellationToken = default)
+        public Task<IEnumerable<string>> SpeIdAsync(EnvironmentConfiguration environmentConfig, string id, string sessionId, CancellationToken cancellationToken = default)
         {
             IDictionary<string, string> dictionary = (IDictionary<string, string>)new Dictionary<string, string>()
             {
-                {"id",id}
+                {"id",id},
+                {"sessionId",sessionId}
             };
 
             var result = this.CreateApiClient(environmentConfig).RunQuery<IEnumerable<string>>("/sitecore/api/management", new GraphQLRequest()
             {
-                Query = "\nquery($id: String){\n  runCommand(id: $id)\n }",
+                Query = "\nquery($id: String, $sessionId: String){\n  runScriptId(id: $id, sessionId: $sessionId)\n }",
                 Variables = (object)dictionary
-            }, "runCommand", cancellationToken);
+            }, "runScriptId", cancellationToken);
+
+            return result;
+        }
+
+        public Task<IEnumerable<string>> SpeInlineAsync(EnvironmentConfiguration environmentConfig, string script, string sessionId, CancellationToken cancellationToken = default)
+        {
+            IDictionary<string, string> dictionary = (IDictionary<string, string>)new Dictionary<string, string>()
+            {
+                {"script",script},
+                {"sessionId",sessionId}
+            };
+
+            var result = this.CreateApiClient(environmentConfig).RunQuery<IEnumerable<string>>("/sitecore/api/management", new GraphQLRequest()
+            {
+                Query = "\nquery($script: String, $sessionId: String){\n  runScriptInline(script: $script, sessionId: $sessionId)\n }",
+                Variables = (object)dictionary
+            }, "runScriptInline", cancellationToken);
 
             return result;
         }
