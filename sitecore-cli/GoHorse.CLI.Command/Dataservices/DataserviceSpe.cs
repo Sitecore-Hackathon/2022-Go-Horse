@@ -41,13 +41,13 @@ namespace GoHorse.CLI.Command.Dataservices
         {
             IDictionary<string, string> dictionary = (IDictionary<string, string>)new Dictionary<string, string>()
             {
-                {"script",script},
-                {"sessionId",sessionId}
+                {"sessionId",sessionId},
+                {"script",script}
             };
 
             var result = this.CreateApiClient(environmentConfig).RunQuery<IEnumerable<string>>("/sitecore/api/management", new GraphQLRequest()
             {
-                Query = "\nquery($script: String, $sessionId: String){\n  runScriptInline(script: $script, sessionId: $sessionId)\n }",
+                Query = "\nquery($sessionId: String, $script: String){\n  runScriptInline(sessionId: $sessionId, script: $script)\n }",
                 Variables = (object)dictionary
             }, "runScriptInline", cancellationToken);
 

@@ -14,7 +14,7 @@ namespace GoHorse.CLI.Command.Commands
         {
             AddOption(ArgOptions.ScriptId);
             AddOption(ArgOptions.Script);
-            AddOption(ArgOptions.SessionId);
+            AddOption(ArgOptions.Session);
             AddOption(ArgOptions.File);
             AddOption(ArgOptions.Config);
             AddOption(ArgOptions.EnvironmentName);
@@ -30,6 +30,8 @@ namespace GoHorse.CLI.Command.Commands
                 await task.ExecuteInline(args, args.Script).ConfigureAwait(false);
             else if (!string.IsNullOrEmpty(args.File))
                 await task.ExecuteFile(args, args.File).ConfigureAwait(false);
+            else 
+                task.LogConsoleInformation("You must pass either (--script, -s), (--file, -f) or (--script-id, -sid)");
             return 0;
         }
     }

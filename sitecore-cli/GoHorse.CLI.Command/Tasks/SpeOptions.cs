@@ -6,7 +6,7 @@ namespace GoHorse.CLI.Command.Tasks
 {
     public class SpeOptions : TaskOptionsBase
     {
-        public string SessionId { get; set; }
+        public string Session { get; set; }
         public string ScriptId { get; set; }
         public string File { get; set; }
         public string Script { get; set; }
@@ -20,7 +20,7 @@ namespace GoHorse.CLI.Command.Tasks
         {
             this.Require("Config");
             this.Default("EnvironmentName", (object)"default");
-            this.Default("SessionId", (object)"Default");
+            //this.Default("SessionId", (object)"Default");
         }
     }
 }

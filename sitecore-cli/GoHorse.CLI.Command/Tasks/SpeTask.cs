@@ -43,7 +43,7 @@ namespace GoHorse.CLI.Command.Tasks
             if (!(await this._rootConfigurationManager.ResolveRootConfiguration(options.Config)).Environments.TryGetValue(options.EnvironmentName, out environmentConfiguration))
                 throw new InvalidConfigurationException("Environment " + options.EnvironmentName + " was not defined. Use the login command to define it.");
             Stopwatch stopwatch = Stopwatch.StartNew();
-            List<string> list = (await this._runCommand.SpeIdAsync(environmentConfiguration, id, options.SessionId).ConfigureAwait(false)).ToList<string>();
+            List<string> list = (await this._runCommand.SpeIdAsync(environmentConfiguration, id, options.Session).ConfigureAwait(false)).ToList<string>();
             stopwatch.Stop();
 
             _logger.LogTrace(string.Format("Results: Loaded in {0}ms ({1}).", (object)stopwatch.ElapsedMilliseconds, (object)list.Count));
@@ -73,7 +73,8 @@ namespace GoHorse.CLI.Command.Tasks
             if (!(await this._rootConfigurationManager.ResolveRootConfiguration(options.Config)).Environments.TryGetValue(options.EnvironmentName, out EnvironmentConfiguration environmentConfiguration))
                 throw new InvalidConfigurationException("Environment " + options.EnvironmentName + " was not defined. Use the login command to define it.");
             Stopwatch stopwatch = Stopwatch.StartNew();
-            List<string> list = (await this._runCommand.SpeInlineAsync(environmentConfiguration, inlineScript, options.SessionId).ConfigureAwait(false)).ToList<string>();
+
+            List<string> list = (await this._runCommand.SpeInlineAsync(environmentConfiguration, inlineScript, options.Session).ConfigureAwait(false)).ToList<string>();
             stopwatch.Stop();
 
             _logger.LogTrace(string.Format("Results: Loaded in {0}ms ({1}).", (object)stopwatch.ElapsedMilliseconds, (object)list.Count));
@@ -98,8 +99,6 @@ namespace GoHorse.CLI.Command.Tasks
 
         public async Task ExecuteFile(SpeOptions options, string scriptFile)
         {
-            LogConsoleInformation($"TESTABC");
-
             ((TaskOptionsBase)options).Validate();
             if (!(await this._rootConfigurationManager.ResolveRootConfiguration(options.Config)).Environments.TryGetValue(options.EnvironmentName, out EnvironmentConfiguration environmentConfiguration))
                 throw new InvalidConfigurationException("Environment " + options.EnvironmentName + " was not defined. Use the login command to define it.");
@@ -118,7 +117,7 @@ namespace GoHorse.CLI.Command.Tasks
             var inlineScript = File.ReadAllText(scriptFile);
 
             // Run inlise script
-            List<string> list = (await this._runCommand.SpeInlineAsync(environmentConfiguration, inlineScript, options.SessionId).ConfigureAwait(false)).ToList<string>();
+            List<string> list = (await this._runCommand.SpeInlineAsync(environmentConfiguration, inlineScript, options.Session).ConfigureAwait(false)).ToList<string>();
             stopwatch.Stop();
             _logger.LogTrace(string.Format("Results: Loaded in {0}ms ({1}).", (object)stopwatch.ElapsedMilliseconds, (object)list.Count));
 

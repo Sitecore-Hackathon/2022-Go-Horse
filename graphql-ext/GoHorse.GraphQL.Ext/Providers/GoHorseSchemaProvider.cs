@@ -62,14 +62,14 @@ namespace GoHorse.GraphQL.Ext.Providers
                 var queryArgumentArray = new QueryArgument[2];
                 queryArgumentArray[0] = new QueryArgument<StringGraphType>
                 {
-                    Name = "script",
-                    Description = "The inline script to run."
-                };
-                queryArgumentArray[1] = new QueryArgument<StringGraphType>
-                {
                     Name = "sessionId",
                     Description = "The Session ID to keep the context."
                 };
+                queryArgumentArray[1] = new QueryArgument<StringGraphType>
+                {
+                    Name = "script",
+                    Description = "The inline script to run."
+                };                
                 ((FieldType)this).Arguments = new QueryArguments(queryArgumentArray);
             }
 

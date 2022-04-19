@@ -31,8 +31,8 @@ namespace GoHorse.CLI.Command
                 Argument = (Argument)new Argument<string>((Func<string>)(() => string.Empty))
             };
 
-        internal static readonly Option SessionId =
-            new Option(new string[2] { "--session", "-ses" }, "SessionId to be used as the Powershell session (default: 'Default')")
+        internal static readonly Option Session =
+            new Option(new string[2] { "--session", "-ses" }, "Session Id to be used as the Powershell session (default: 'Default')")
             {
                 Argument = (Argument)new Argument<string>((Func<string>)(() => string.Empty))
             };

@@ -4,5 +4,5 @@ $test = "abcTEST"
 Write-Host $test
 
 $item.Editing.BeginEdit()
-$item.Fields["Title"].Value = $item.Fields["Title"].Value + "1"
+$item.Fields["Title"].Value = $item.Fields["Title"].Value + "!?"
 $item.Editing.EndEdit()
