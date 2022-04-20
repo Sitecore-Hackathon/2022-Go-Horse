@@ -1,11 +1,7 @@
 ![SPE CLI SpeShell](docs/images/GoHorse%20SpeShell.png?raw=true)
 # SPE CLI SpeShell
 
-This module was originally an entry at the Sitecore Hackathon 2022
-
-* [Click here to browse the original submission](https://github.com/Sitecore-Hackathon/2022-Go-Horse/tree/Hackathon-submission)
-
-Or continue down for the updated version
+This module was originally an entry at the Sitecore Hackathon 2022 ([Click here to browse the original submission](https://github.com/Sitecore-Hackathon/2022-Go-Horse/tree/Hackathon-submission))
 
 ## Authors
 ⟹ **Go Horse**
@@ -14,20 +10,21 @@ Or continue down for the updated version
 - Rodrigo Peplau 
 
 ## Description
-⟹ This module extends the Sitecore CLI plugin, adding a new plugin named "spe"
+⟹ This module extends the Sitecore CLI, adding a new command named "spe" (Sitecore Powershell Extensions)
 
-This plugin allows the execution of Powershell scripts inside a Sitecore instance.
-
-
-## Video link
-[![Sitecore Hackathon 2022 - Go Horse Team](docs/images/image-thumbnail.jpg?raw=true)](https://www.youtube.com/watch?v=v2I7RFLJduc "Sitecore Hackathon 2022 - Go Horse Team")
-
+From the command prompt, you can now run SPE scripts on Sitecore instances.
 
 
 ## Pre-requisites and Dependencies
-⟹ Sitecore 10.2 with Identity Server fully functional and PowerShell module
+⟹ Sitecore 10.2 with Identity Server fully functional and PowerShell module, with the following modules installed:
 
-⟹ The Sitecore CLI gohorse plugin has the following dependencies below:
+* Sitecore CLI 4.1.1 (using installation wizard)
+https://sitecoredev.azureedge.net/~/media/2B968036924A4EEB98C2E68641B63A43.ashx?date=20220127T085224
+
+* GoHorse.GraphQL (using installation wizard)   
+[GoHorse-GraphQL-Ext-1.0.zip](/sc-packages/GoHorse-GraphQL-Ext-1.0.zip?raw=true)
+
+⟹ The Sitecore CLI gohorse plugin has the following dependencies:
 
 * Dotnet SDK - 3.1.416 -x64
 https://dotnet.microsoft.com/en-us/download/dotnet/thank-you/sdk-3.1.416-windows-x64-installer  
@@ -35,11 +32,6 @@ https://dotnet.microsoft.com/en-us/download/dotnet/thank-you/sdk-3.1.416-windows
 * Dotnet Hosting - 3.1.22 
 https://dotnet.microsoft.com/en-us/download/dotnet/thank-you/runtime-aspnetcore-3.1.22-windows-hosting-bundle-installer
 
-* Sitecore CLI 4.1.1 (using installation wizard)
-https://sitecoredev.azureedge.net/~/media/2B968036924A4EEB98C2E68641B63A43.ashx?date=20220127T085224
-
-* GoHorse.GraphQL (using installation wizard)   
-[GoHorse-GraphQL-Ext-1.0.zip](/sc-packages/GoHorse-GraphQL-Ext-1.0.zip?raw=true)
 
 
 ## Installation instructions
