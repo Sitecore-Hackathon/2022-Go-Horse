@@ -3,7 +3,7 @@
 
 This module was originally an entry at the Sitecore Hackathon 2022
 
-* [Click here to browse the original submission](tree/Hackathon-submission)
+* [Click here to browse the original submission](https://github.com/Sitecore-Hackathon/2022-Go-Horse/tree/Hackathon-submission)
 
 Or continue down for the updated version
 
