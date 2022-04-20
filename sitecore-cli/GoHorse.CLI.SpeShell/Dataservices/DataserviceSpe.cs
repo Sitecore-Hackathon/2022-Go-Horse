@@ -8,7 +8,7 @@ using System.Collections.Generic;
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace GoHorse.CLI.Command.Dataservices
+namespace GoHorse.CLI.SpeShell.Dataservices
 {
     internal class DataserviceSpe : ISpe
     {
@@ -16,19 +16,19 @@ namespace GoHorse.CLI.Command.Dataservices
 
         public DataserviceSpe(IServiceProvider serviceProvider)
         {
-            AssertionExtensions.ThrowIfNull<IServiceProvider>(serviceProvider, nameof(serviceProvider));
-            this._apiClientFactory = new Func<ISitecoreApiClient>((serviceProvider).GetRequiredService<ISitecoreApiClient>);
+            serviceProvider.ThrowIfNull(nameof(serviceProvider));
+            _apiClientFactory = new Func<ISitecoreApiClient>(serviceProvider.GetRequiredService<ISitecoreApiClient>);
         }
 
         public Task<IEnumerable<string>> SpeIdAsync(EnvironmentConfiguration environmentConfig, string id, string sessionId, CancellationToken cancellationToken = default)
         {
-            IDictionary<string, string> dictionary = (IDictionary<string, string>)new Dictionary<string, string>()
+            IDictionary<string, string> dictionary = new Dictionary<string, string>()
             {
                 {"id",id},
                 {"sessionId",sessionId}
             };
 
-            var result = this.CreateApiClient(environmentConfig).RunQuery<IEnumerable<string>>("/sitecore/api/management", new GraphQLRequest()
+            var result = CreateApiClient(environmentConfig).RunQuery<IEnumerable<string>>("/sitecore/api/management", new GraphQLRequest()
             {
                 Query = "\nquery($id: String, $sessionId: String){\n  runScriptId(id: $id, sessionId: $sessionId)\n }",
                 Variables = (object)dictionary
@@ -39,13 +39,13 @@ namespace GoHorse.CLI.Command.Dataservices
 
         public Task<IEnumerable<string>> SpeInlineAsync(EnvironmentConfiguration environmentConfig, string script, string sessionId, CancellationToken cancellationToken = default)
         {
-            IDictionary<string, string> dictionary = (IDictionary<string, string>)new Dictionary<string, string>()
+            IDictionary<string, string> dictionary = new Dictionary<string, string>()
             {
                 {"sessionId",sessionId},
                 {"script",script}
             };
 
-            var result = this.CreateApiClient(environmentConfig).RunQuery<IEnumerable<string>>("/sitecore/api/management", new GraphQLRequest()
+            var result = CreateApiClient(environmentConfig).RunQuery<IEnumerable<string>>("/sitecore/api/management", new GraphQLRequest()
             {
                 Query = "\nquery($sessionId: String, $script: String){\n  runScriptInline(sessionId: $sessionId, script: $script)\n }",
                 Variables = (object)dictionary
@@ -56,7 +56,7 @@ namespace GoHorse.CLI.Command.Dataservices
 
         private ISitecoreApiClient CreateApiClient(EnvironmentConfiguration environmentConfig)
         {
-            ISitecoreApiClient apiClient = this._apiClientFactory();
+            ISitecoreApiClient apiClient = _apiClientFactory();
             apiClient.Endpoint = environmentConfig;
             return apiClient;
         }

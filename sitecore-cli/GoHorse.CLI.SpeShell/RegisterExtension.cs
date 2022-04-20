@@ -2,13 +2,13 @@
 using Microsoft.Extensions.DependencyInjection;
 using Sitecore.Devex.Client.Cli.Extensibility;
 using Sitecore.Devex.Client.Cli.Extensibility.Subcommands;
-using GoHorse.CLI.Command.Commands;
 using Sitecore.DevEx.Serialization.Client;
 using System;
 using System.Collections.Generic;
-using GoHorse.CLI.Command.Dataservices;
+using GoHorse.CLI.SpeShell.Dataservices;
+using GoHorse.CLI.SpeShell.Commands;
 
-namespace GoHorse.CLI.Command
+namespace GoHorse.CLI.SpeShell
 {
     public class RegisterExtension : ISitecoreCliExtension
     {

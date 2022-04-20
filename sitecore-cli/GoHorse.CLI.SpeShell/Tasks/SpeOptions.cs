@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Diagnostics.CodeAnalysis;
 
-namespace GoHorse.CLI.Command.Tasks
+namespace GoHorse.CLI.SpeShell.Tasks
 {
     public class SpeOptions : TaskOptionsBase
     {
@@ -18,9 +18,9 @@ namespace GoHorse.CLI.Command.Tasks
 
         public override void Validate()
         {
-            this.Require("Config");
-            this.Default("EnvironmentName", (object)"default");
-            //this.Default("SessionId", (object)"Default");
+            Require("Config");
+            Default("EnvironmentName", "default");
+            Default("Session", "Default");
         }
     }
 }

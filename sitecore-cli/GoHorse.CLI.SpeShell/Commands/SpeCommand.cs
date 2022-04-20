@@ -1,10 +1,10 @@
 ﻿using Sitecore.Devex.Client.Cli.Extensibility.Subcommands;
-using GoHorse.CLI.Command.Tasks;
 using System;
 using System.Diagnostics.CodeAnalysis;
 using System.Threading.Tasks;
+using GoHorse.CLI.SpeShell.Tasks;
 
-namespace GoHorse.CLI.Command.Commands
+namespace GoHorse.CLI.SpeShell.Commands
 {
     [ExcludeFromCodeCoverage]
     public class SpeCommand : SubcommandBase<SpeTask, SpeCommandArgs>
@@ -30,7 +30,7 @@ namespace GoHorse.CLI.Command.Commands
                 await task.ExecuteInline(args, args.Script).ConfigureAwait(false);
             else if (!string.IsNullOrEmpty(args.File))
                 await task.ExecuteFile(args, args.File).ConfigureAwait(false);
-            else 
+            else
                 task.LogConsoleInformation("You must pass either (--script, -s), (--file, -f) or (--script-id, -sid)");
             return 0;
         }

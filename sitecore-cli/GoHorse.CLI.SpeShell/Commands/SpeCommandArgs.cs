@@ -1,8 +1,8 @@
 ﻿using Sitecore.Devex.Client.Cli.Extensibility.Subcommands;
-using GoHorse.CLI.Command.Tasks;
 using System.Diagnostics.CodeAnalysis;
+using GoHorse.CLI.SpeShell.Tasks;
 
-namespace GoHorse.CLI.Command.Commands
+namespace GoHorse.CLI.SpeShell.Commands
 {
     [ExcludeFromCodeCoverage]
     public class SpeCommandArgs : SpeOptions, IVerbosityArgs

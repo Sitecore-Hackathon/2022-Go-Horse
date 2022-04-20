@@ -7,8 +7,8 @@
     <ProjectGuid>{3409386A-51D4-405A-BE82-BA8162386D60}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>GoHorse.GraphQL.Ext</RootNamespace>
-    <AssemblyName>GoHorse.GraphQL.Ext</AssemblyName>
+    <RootNamespace>GoHorse.GraphQL.SpeShell</RootNamespace>
+    <AssemblyName>GoHorse.GraphQL.SpeShell</AssemblyName>
     <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <Deterministic>true</Deterministic>
@@ -341,7 +341,7 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />
-    <None Include="App_Config\Include\GoHorse.GraphQL.config" />
+    <None Include="App_Config\Include\GoHorse.GraphQL.SpeShell.config" />
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup />

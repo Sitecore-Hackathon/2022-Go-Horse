@@ -6,8 +6,15 @@
     <PackageId>GoHorse.CLI.SpeShell</PackageId>
     <Authors>Rodrigo Peplau, José Neto, João Neto</Authors>
     <Product>GoHorse.CLI.SpeShell</Product>
-    <Version>1.2.0</Version>
+    <Version>1.2.3</Version>
     <Company>Go Horse Team</Company>
+    <PackageLicenseExpression>Apache-2.0</PackageLicenseExpression>
+    <PackageProjectUrl>https://github.com/Sitecore-Hackathon/2022-Go-Horse</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/Sitecore-Hackathon/2022-Go-Horse</RepositoryUrl>
+    <Description>This module extends the Sitecore CLI plugin, adding a new plugin named "spe" (Sitecore Powershell Extensions)
+It comes with a command that has the purpose of running a Sitecore Powershell Script.
+
+https://github.com/Sitecore-Hackathon/2022-Go-Horse</Description>
   </PropertyGroup>
 
   <ItemGroup>
