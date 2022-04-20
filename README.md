@@ -1,7 +1,8 @@
-![SPE CLI SpeShell](docs/images/GoHorse SpeShell.png?raw=true "SPE CLI SpeShell")
+![SPE CLI SpeShell](docs/images/GoHorse%20SpeShell.png?raw=true)
 # SPE CLI SpeShell
 
 This module was originally an entry at the Sitecore Hackathon 2022
+Click here to 
 
 ## Team name
 ⟹ **Go Horse**
