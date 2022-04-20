@@ -1,13 +1,13 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFramework>netcoreapp3.1</TargetFramework>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
-    <PackageId>GoHorse.CLI.Command</PackageId>
-    <Authors>GoHorse.CLI.Command</Authors>
-    <Product>GoHorse.CLI.Command</Product>
-    <Version>1.1.1</Version>
-    <Company>GoHorse.CLI.Command</Company>
+    <PackageId>GoHorse.CLI.SpeShell</PackageId>
+    <Authors>Rodrigo Peplau, José Neto, João Neto</Authors>
+    <Product>GoHorse.CLI.SpeShell</Product>
+    <Version>1.2.0</Version>
+    <Company>Go Horse Team</Company>
   </PropertyGroup>
 
   <ItemGroup>

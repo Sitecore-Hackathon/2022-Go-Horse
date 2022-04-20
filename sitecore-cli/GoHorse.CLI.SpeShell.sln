@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.31205.134
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GoHorse.CLI.Command", "GoHorse.CLI.Command\GoHorse.CLI.Command.csproj", "{54C65B27-A0B4-4999-B44A-018582F1D843}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GoHorse.CLI.SpeShell", "GoHorse.CLI.SpeShell\GoHorse.CLI.SpeShell.csproj", "{54C65B27-A0B4-4999-B44A-018582F1D843}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
