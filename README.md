@@ -2,7 +2,10 @@
 # SPE CLI SpeShell
 
 This module was originally an entry at the Sitecore Hackathon 2022
-Click here to 
+
+* [Click here to browse the original submission](tree/Hackathon-submission)
+
+Or continue down for the updated version
 
 ## Team name
 ⟹ **Go Horse**
