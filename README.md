@@ -53,31 +53,39 @@ https://dotnet.microsoft.com/en-us/download/dotnet/thank-you/runtime-aspnetcore-
  
  In the end you folder will look like the following:
  
- ![SPE CLI SpeShell](docs/images/GoHorse%20SpeShell.png?raw=true)
+ ![CLI folder](docs/images/CLIfolder.png?raw=true)
 
+<br>
 
-**STEP 2** ⟹ Open your CLI folder in the Powershell command window and run the command below:
+**STEP 2** ⟹ Restore Sitecore CLI
+
+Open your CLI folder in the Powershell command window and run the command below:
 
 ```powershell
 dotnet tool restore
 ```
+
 If any errors occurred during the command above, use the Sitecore official CLI documentation:  https://doc.sitecore.com/xp/en/developers/102/developer-tools/install-sitecore-command-line-interface.html
 
 You must see the message below before continuing:
 
-* Restore was successful.
+* *Restore was successful.*
 
-⟹ Sitecore CLI GoHorse Plugin
+<br>
 
-To Install the GoHorse plugin use command below:
+**STEP 3** ⟹ Install the Sitecore CLI SpeShell Plugin
 
 ```powershell
-dotnet sitecore plugin add -n GoHorse.CLI.Command
+dotnet sitecore plugin add -n GoHorse.CLI.SpeShell
 ```
 
 You must see the message below before continuing:
 
-* Successfully installed version X.X.X of plugin GoHorse.CLI.Command
+* *Successfully installed version X.Y.Z of plugin GoHorse.CLI.SpeShell*
+
+Or in case the module is already installed:
+
+* *You have already installed version X.Y.Z of plugin GoHorse.CLI.SpeShell*
 
 
 ## Usage instructions
