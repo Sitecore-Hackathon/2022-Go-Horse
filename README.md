@@ -75,7 +75,9 @@ If any errors occurred during the command above, use the Sitecore official CLI d
 
 You must see the message below before continuing:
 
-* *Restore was successful.*
+```powershell
+Restore was successful.
+```
 
 <br>
 
@@ -87,7 +89,9 @@ dotnet sitecore plugin add -n GoHorse.CLI.SpeSh
 
 You must see the message below before continuing:
 
-* *Successfully installed version X.Y.Z of plugin GoHorse.CLI.SpeSh*
+```powershell
+Successfully installed version X.Y.Z of plugin GoHorse.CLI.SpeSh
+```
 
 <br>
 
