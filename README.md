@@ -27,7 +27,7 @@ From the command prompt, you can now run SPE scripts on Sitecore instances.
 ## Pre-requisites and Dependencies
 [<< Back to TOC](#toc)
 
-⟹ Sitecore 10.2 with Identity Server fully functional the following modules installed:
+⟹ Sitecore 10.2 with Identity Server fully functional, with the following modules installed:
 
 * Sitecore PowerShell Extensions:  
 https://doc.sitecorepowershell.com/installation
