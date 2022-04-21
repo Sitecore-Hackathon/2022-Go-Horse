@@ -1,6 +1,6 @@
 ﻿using Sitecore.Services.GraphQL.Schemas;
 
-namespace GoHorse.GraphQL.Ext
+namespace GoHorse.GraphQL.SpeSh
 {
     public class GoHorseExtender : SchemaExtender
     {

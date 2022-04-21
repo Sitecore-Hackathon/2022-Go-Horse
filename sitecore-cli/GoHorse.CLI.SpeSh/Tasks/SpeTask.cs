@@ -9,9 +9,10 @@ using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
 using System.IO;
-using GoHorse.CLI.SpeShell.Dataservices;
+using GoHorse.CLI.SpeShell.Tasks;
+using GoHorse.CLI.SpeSh.Dataservices;
 
-namespace GoHorse.CLI.SpeShell.Tasks
+namespace GoHorse.CLI.SpeSh.Tasks
 {
     public class SpeTask
     {

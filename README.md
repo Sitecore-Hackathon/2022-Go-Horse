@@ -1,5 +1,5 @@
-![SPE CLI SpeShell](docs/images/GoHorse%20SpeShell.png?raw=true)
-# SPE CLI SpeShell
+![SPE CLI SpeSh](docs/images/GoHorse%20SpeSh.png?raw=true)
+# SPE CLI SpeSh
 
 This module was originally an entry at the Sitecore Hackathon 2022 ([Click here to browse the original submission](https://github.com/Sitecore-Hackathon/2022-Go-Horse/tree/Hackathon-submission))  
 
@@ -35,8 +35,8 @@ https://doc.sitecorepowershell.com/installation
 * Sitecore CLI 4.1.1 (using installation wizard):  
 https://sitecoredev.azureedge.net/~/media/2B968036924A4EEB98C2E68641B63A43.ashx?date=20220127T085224
 
-* GoHorse.GraphQL.SpeShell (using installation wizard):  
-[GoHorse GraphQL SpeShell-1.0.zip](/sc-packages/GoHorse%20GraphQL%20SpeShell-1.0.zip?raw=true)
+* GoHorse.GraphQL.SpeSh (using installation wizard):  
+[GoHorse GraphQL SpeSh-1.0.zip](/sc-packages/GoHorse%20GraphQL%20SpeSh-1.0.zip?raw=true)
 
 ⟹ Install the following dependencies where you want to run the CLI:
 
@@ -85,15 +85,15 @@ You must see the message below before continuing:
 
 <br>
 
-**STEP 3** ⟹ Install the Sitecore CLI SpeShell Plugin
+**STEP 3** ⟹ Install the Sitecore CLI SpeSh Plugin
 
 ```powershell
-dotnet sitecore plugin add -n GoHorse.CLI.SpeShell
+dotnet sitecore plugin add -n GoHorse.CLI.SpeSh
 ```
 
 You must see the message below before continuing:
 
-* *Successfully installed version X.Y.Z of plugin GoHorse.CLI.SpeShell*
+* *Successfully installed version X.Y.Z of plugin GoHorse.CLI.SpeSh*
 
 <br>
 
@@ -118,7 +118,7 @@ dotnet sitecore login --authority https://<Sitecore identity server> --cm http:/
 The module comes with a test script that can be executed by PATH or ID:
 
 ```powershell
-dotnet sitecore spe --script-id "/sitecore/system/Modules/PowerShell/Script Library/GoHorse SpeShell Test Script"
+dotnet sitecore spe --script-id "/sitecore/system/Modules/PowerShell/Script Library/GoHorse SpeSh Test Script"
 ```
 
 ```powershell
@@ -128,7 +128,7 @@ dotnet sitecore spe --script-id "{11CE538E-5EA9-481A-8506-30F7DB03F308}"
 Will result as below:
 
 ```powershell
-Results: PowerShell script successful executed /sitecore/system/Modules/PowerShell/Script Library/GoHorse SpeShell Test Script
+Results: PowerShell script successful executed /sitecore/system/Modules/PowerShell/Script Library/GoHorse SpeSh Test Script
 abc
 True
 ```

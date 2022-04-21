@@ -5,10 +5,10 @@ using Sitecore.Devex.Client.Cli.Extensibility.Subcommands;
 using Sitecore.DevEx.Serialization.Client;
 using System;
 using System.Collections.Generic;
-using GoHorse.CLI.SpeShell.Dataservices;
-using GoHorse.CLI.SpeShell.Commands;
+using GoHorse.CLI.SpeSh.Dataservices;
+using GoHorse.CLI.SpeSh.Commands;
 
-namespace GoHorse.CLI.SpeShell
+namespace GoHorse.CLI.SpeSh
 {
     public class RegisterExtension : ISitecoreCliExtension
     {

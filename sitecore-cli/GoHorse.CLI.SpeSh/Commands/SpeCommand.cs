@@ -2,9 +2,9 @@
 using System;
 using System.Diagnostics.CodeAnalysis;
 using System.Threading.Tasks;
-using GoHorse.CLI.SpeShell.Tasks;
+using GoHorse.CLI.SpeSh.Tasks;
 
-namespace GoHorse.CLI.SpeShell.Commands
+namespace GoHorse.CLI.SpeSh.Commands
 {
     [ExcludeFromCodeCoverage]
     public class SpeCommand : SubcommandBase<SpeTask, SpeCommandArgs>

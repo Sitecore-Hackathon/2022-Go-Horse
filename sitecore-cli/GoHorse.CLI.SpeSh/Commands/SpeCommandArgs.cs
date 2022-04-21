@@ -2,7 +2,7 @@
 using System.Diagnostics.CodeAnalysis;
 using GoHorse.CLI.SpeShell.Tasks;
 
-namespace GoHorse.CLI.SpeShell.Commands
+namespace GoHorse.CLI.SpeSh.Commands
 {
     [ExcludeFromCodeCoverage]
     public class SpeCommandArgs : SpeOptions, IVerbosityArgs

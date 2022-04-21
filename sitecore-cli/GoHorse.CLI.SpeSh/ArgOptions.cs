@@ -2,7 +2,7 @@
 using System.CommandLine;
 using System.Diagnostics.CodeAnalysis;
 
-namespace GoHorse.CLI.SpeShell
+namespace GoHorse.CLI.SpeSh
 {
     [ExcludeFromCodeCoverage]
     internal static class ArgOptions

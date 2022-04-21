@@ -6,7 +6,7 @@ using Sitecore.Data.Items;
 using Spe.Core.Host;
 using System.Linq;
 
-namespace GoHorse.GraphQL.SpeShell.Providers
+namespace GoHorse.GraphQL.SpeSh.Providers
 {
     public class GoHorseSchemaProvider : SchemaProviderBase
     {

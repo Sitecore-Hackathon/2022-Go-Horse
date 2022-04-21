@@ -8,7 +8,7 @@ using System.Collections.Generic;
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace GoHorse.CLI.SpeShell.Dataservices
+namespace GoHorse.CLI.SpeSh.Dataservices
 {
     internal class DataserviceSpe : ISpe
     {
