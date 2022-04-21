@@ -11,8 +11,19 @@ This module was originally an entry at the Sitecore Hackathon 2022 ([Click here 
 
 ## Description
 ⟹ This module extends the Sitecore CLI, adding a new command named "spe" (Sitecore Powershell Extensions)
-
 From the command prompt, you can now run SPE scripts on Sitecore instances.
+
+## TOC
+
+* [Pre-requisites and Dependencies](#pre-requisites-and-dependencies)
+* [Installation instructions](#installation-instructions)
+* [Installation](#installation-instructions)
+* [Usage instructions](#usage-instructions)
+* [Login to your Sitecore instance](#login-to-your-sitecore-instance)
+* [CASE 1 - Run a Powershell Script stored in Sitecore](#case-1---run-a-powershell-script-stored-in-sitecore)
+* [CASE 2 - Run a Powershell Script file from your local](#case-2---run-a-powershell-script-file-from-your-local)
+* [CASE 3 - Run Inline Powershell commands](#case-3---run-inline-powershell-commands)
+* [CASE 4 - Control multiple Powershell sessions](#case-4---control-multiple-powershell-sessions)
 
 ## Pre-requisites and Dependencies
 
