@@ -39,6 +39,10 @@ https://dotnet.microsoft.com/en-us/download/dotnet/thank-you/runtime-aspnetcore-
 
 **STEP 1** ⟹ Get your CLI folder prepared:
 
+> The quickest way to get a valid CLI folder is to clone or download this git repository and use it's root folder
+> 
+> For a cleaner CLI folder, follow the steps below:
+
  1. Create an empty folder
  2. Download and copy the following files to the root of your folder:
  - [nuget.config](/nuget.config?raw=true)
@@ -47,8 +51,9 @@ https://dotnet.microsoft.com/en-us/download/dotnet/thank-you/runtime-aspnetcore-
  4. Download and copy the following files to the ".config" folder: 
  - [/.config/dotnet-tools.json](/.config/dotnet-tools.json?raw=true)
  
+ In the end you folder will look like the following:
  
-> The quickest way to get a valid CLI folder is to clone or download this git repository and use it's root folder     
+ ![SPE CLI SpeShell](docs/images/GoHorse%20SpeShell.png?raw=true)
 
 
 **STEP 2** ⟹ Open your CLI folder in the Powershell command window and run the command below:
