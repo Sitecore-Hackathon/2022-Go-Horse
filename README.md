@@ -1,54 +1,62 @@
 ![SPE CLI SpeShell](docs/images/GoHorse%20SpeShell.png?raw=true)
 # SPE CLI SpeShell
 
-This module was originally an entry at the Sitecore Hackathon 2022
+This module was originally an entry at the Sitecore Hackathon 2022 ([Click here to browse the original submission](https://github.com/Sitecore-Hackathon/2022-Go-Horse/tree/Hackathon-submission))  
 
-* [Click here to browse the original submission](tree/Hackathon-submission)
-
-Or continue down for the updated version
-
-## Team name
+## Authors
 ⟹ **Go Horse**
 - José Neto
 - Roberto de Almeida Jr.
 - Rodrigo Peplau 
 
-## Category
-⟹ **Extend the Sitecore Command Line interface (CLI) plugin**
-
 ## Description
-⟹ This module extends the Sitecore CLI plugin, adding a new plugin named "gohorse"
+⟹ This module extends the Sitecore CLI, adding a new command named "spe" (Sitecore Powershell Extensions)
 
- This plugin comes with a command that has the purpose of running a Sitecore Powershell Script.
-
- The Sitecore CLI gohorse plugin will decrease the dependency of having an open Sitecore instance, in a browser, to run a Powershell script. Now there are endless possibilities of managing the Sitecore XP with the Sitecore CLI gohorse plugin.
-
-
-## Video link
-[![Sitecore Hackathon 2022 - Go Horse Team](docs/images/image-thumbnail.jpg?raw=true)](https://www.youtube.com/watch?v=v2I7RFLJduc "Sitecore Hackathon 2022 - Go Horse Team")
-
-
+From the command prompt, you can now run SPE scripts on Sitecore instances.
 
 ## Pre-requisites and Dependencies
-⟹ Sitecore 10.2 with Identity Server fully functional and PowerShell module
 
-⟹ The Sitecore CLI gohorse plugin has the following dependencies below:
+⟹ Sitecore 10.2 with Identity Server fully functional the following modules installed:
 
-* Dotnet SDK - 3.1.416 -x64
-https://dotnet.microsoft.com/en-us/download/dotnet/thank-you/sdk-3.1.416-windows-x64-installer  
+* Sitecore PowerShell Extensions:  
+https://doc.sitecorepowershell.com/installation
 
-* Dotnet Hosting - 3.1.22 
-https://dotnet.microsoft.com/en-us/download/dotnet/thank-you/runtime-aspnetcore-3.1.22-windows-hosting-bundle-installer
-
-* Sitecore CLI 4.1.1 (using installation wizard)
+* Sitecore CLI 4.1.1 (using installation wizard):  
 https://sitecoredev.azureedge.net/~/media/2B968036924A4EEB98C2E68641B63A43.ashx?date=20220127T085224
 
-* GoHorse.GraphQL (using installation wizard)   
-[GoHorse-GraphQL-Ext-1.0.zip](/sc-packages/GoHorse-GraphQL-Ext-1.0.zip?raw=true)
+* GoHorse.GraphQL.SpeShell (using installation wizard):  
+[GoHorse GraphQL SpeShell-1.0.zip](/sc-packages/GoHorse%20GraphQL%20SpeShell-1.0.zip?raw=true)
 
+⟹ Install the following dependencies where you want to run the CLI:
+
+* Dotnet SDK - 3.1.416 -x64  
+https://dotnet.microsoft.com/en-us/download/dotnet/thank-you/sdk-3.1.416-windows-x64-installer  
+
+* Dotnet Hosting - 3.1.22  
+https://dotnet.microsoft.com/en-us/download/dotnet/thank-you/runtime-aspnetcore-3.1.22-windows-hosting-bundle-installer
 
 ## Installation instructions
-⟹ Open the git repository root in the Powershell command window and run the command below:
+
+**STEP 1** ⟹ Get your CLI folder prepared:
+
+> The quickest way to get a valid CLI folder is to clone or download this git repository and use it's root folder
+> 
+> For a cleaner CLI folder, follow the steps below:
+
+ 1. Create an empty folder
+ 2. Download and copy the following files to the root of your folder:
+ - [nuget.config](/nuget.config?raw=true)
+ - [sitecore.json](/sitecore.json?raw=true)
+ 3. Inside your folder, create a new folder called ".config"
+ 4. Download and copy the following files to the ".config" folder: 
+ - [/.config/dotnet-tools.json](/.config/dotnet-tools.json?raw=true)
+ 
+ In the end you folder will look like the following:
+ 
+ ![SPE CLI SpeShell](docs/images/GoHorse%20SpeShell.png?raw=true)
+
+
+**STEP 2** ⟹ Open your CLI folder in the Powershell command window and run the command below:
 
 ```powershell
 dotnet tool restore
