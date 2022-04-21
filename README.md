@@ -16,7 +16,6 @@ From the command prompt, you can now run SPE scripts on Sitecore instances.
 ## TOC
 
 * [Pre-requisites and Dependencies](#pre-requisites-and-dependencies)
-* [Installation instructions](#installation-instructions)
 * [Installation](#installation-instructions)
 * [Usage instructions](#usage-instructions)
 * [Login to your Sitecore instance](#login-to-your-sitecore-instance)
@@ -26,6 +25,7 @@ From the command prompt, you can now run SPE scripts on Sitecore instances.
 * [CASE 4 - Control multiple Powershell sessions](#case-4---control-multiple-powershell-sessions)
 
 ## Pre-requisites and Dependencies
+[<< Back to TOC](#toc)
 
 ⟹ Sitecore 10.2 with Identity Server fully functional the following modules installed:
 
@@ -47,6 +47,7 @@ https://dotnet.microsoft.com/en-us/download/dotnet/thank-you/sdk-3.1.416-windows
 https://dotnet.microsoft.com/en-us/download/dotnet/thank-you/runtime-aspnetcore-3.1.22-windows-hosting-bundle-installer
 
 ## Installation instructions
+[<< Back to TOC](#toc)
 
 **STEP 1** ⟹ Get your CLI folder prepared:
 
@@ -108,6 +109,8 @@ dotnet sitecore login --authority https://<Sitecore identity server> --cm http:/
 
 ![Sitecore CLI login](docs/images/sitecore-cli-login.png?raw=true "Sitecore CLI login")
 
+[<< Back to TOC](#toc)
+
 <br>
 
 ### CASE 1 - Run a Powershell Script stored in Sitecore
@@ -130,6 +133,8 @@ abc
 True
 ```
 
+[<< Back to TOC](#toc)
+
 <br>
 
 ### CASE 2 - Run a Powershell Script file from your local
@@ -148,6 +153,8 @@ abcTEST
 True
 ```
 
+[<< Back to TOC](#toc)
+
 <br>
 
 ### CASE 3 - Run Inline Powershell commands
@@ -164,6 +171,8 @@ Will result as below:
 Results: PowerShell script successful executed $test='ABC'; Write-Host $test;
 ABC
 ```
+
+[<< Back to TOC](#toc)
 
 <br>
 
@@ -192,3 +201,6 @@ ABC
 Results: PowerShell script successful executed Write-Host $test
 XYZ
 ```
+
+[<< Back to TOC](#toc)
+
