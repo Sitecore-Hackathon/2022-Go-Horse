@@ -52,19 +52,12 @@ https://dotnet.microsoft.com/en-us/download/dotnet/thank-you/runtime-aspnetcore-
 
 **STEP 1** ⟹ Get your CLI folder prepared:
 
-> The quickest way to get a valid CLI folder is to clone or download this git repository and use it's root folder
-> 
-> For a cleaner CLI folder, follow the steps below:
+1. Clone or download this repository
+2. Copy the folder 'sitecore-cli-folder' from the root folder to your favorite place (you can work in-place if you want)
 
- 1. Create an empty folder
- 2. Download and copy the following files to the root of your folder:
- - [nuget.config](/nuget.config?raw=true)
- - [sitecore.json](/sitecore.json?raw=true)
- 3. Inside your folder, create a new folder called ".config"
- 4. Download and copy the following files to the ".config" folder: 
- - [/.config/dotnet-tools.json](/.config/dotnet-tools.json?raw=true)
- 
- In the end you folder will look like the following:
+> Regenerate the folder 'sitecore-cli-folder' by running the  Powershell script 'generate-cli-folder.ps1', localized at the root folder
+  
+ You folder will look like the following:
  
  ![CLI folder](docs/images/CLIfolder.png?raw=true)
 
