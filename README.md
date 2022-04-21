@@ -83,10 +83,7 @@ You must see the message below before continuing:
 
 * *Successfully installed version X.Y.Z of plugin GoHorse.CLI.SpeShell*
 
-Or in case the module is already installed:
-
-* *You have already installed version X.Y.Z of plugin GoHorse.CLI.SpeShell*
-
+<br>
 
 ## Usage instructions
 
@@ -100,6 +97,7 @@ dotnet sitecore login --authority https://<Sitecore identity server> --cm http:/
 
 ![Sitecore CLI login](docs/images/sitecore-cli-login.png?raw=true "Sitecore CLI login")
 
+<br>
 
 ### CASE 1 - Run a Powershell Script stored in Sitecore
 
@@ -113,6 +111,16 @@ dotnet sitecore spe --script-id "/sitecore/system/Modules/PowerShell/Script Libr
 dotnet sitecore spe --script-id "{11CE538E-5EA9-481A-8506-30F7DB03F308}"
 ```
 
+Will result as below:
+
+```powershell
+Results: PowerShell script successful executed /sitecore/system/Modules/PowerShell/Script Library/GoHorse SpeShell Test Script
+abc
+True
+```
+
+<br>
+
 ### CASE 2 - Run a Powershell Script file from your local
 
 Local PS1 files can also be executed inside the Sitecore CM instance:
@@ -120,6 +128,16 @@ Local PS1 files can also be executed inside the Sitecore CM instance:
 ```powershell
 dotnet sitecore spe --file .\test.ps1
 ```
+
+Will result as below:
+
+```powershell
+Results: PowerShell script successful executed .\test.ps1
+abcTEST
+True
+```
+
+<br>
 
 ### CASE 3 - Run Inline Powershell commands
 
@@ -129,6 +147,14 @@ Local PS1 files can also be executed inside the Sitecore CM instance (Make sure 
 dotnet sitecore spe --script "`$test='ABC'; Write-Host `$test;"
 ```
 
+Will result as below:
+
+```powershell
+Results: PowerShell script successful executed $test='ABC'; Write-Host $test;
+ABC
+```
+
+<br>
 
 ### CASE 4 - Control multiple Powershell sessions
 
