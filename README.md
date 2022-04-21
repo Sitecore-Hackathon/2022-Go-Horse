@@ -89,6 +89,9 @@ Or in case the module is already installed:
 
 
 ## Usage instructions
+
+### Login to your Sitecore instance
+
 ⟹ Before running the new plugin, you must execute the Sitecore CLI login to authenticate in the Sitecore IdentityServer instance:
 
 ```powershell
@@ -97,20 +100,58 @@ dotnet sitecore login --authority https://<Sitecore identity server> --cm http:/
 
 ![Sitecore CLI login](docs/images/sitecore-cli-login.png?raw=true "Sitecore CLI login")
 
-The module comes with a test script that can be executed by the command below:
+
+### CASE 1 - Run a Powershell Script stored in Sitecore
+
+The module comes with a test script that can be executed by PATH or ID:
 
 ```powershell
-dotnet sitecore gohorse run-command --command-id "{11CE538E-5EA9-481A-8506-30F7DB03F308}"
+dotnet sitecore spe --script-id "/sitecore/system/Modules/PowerShell/Script Library/GoHorse SpeShell Test Script"
 ```
 
-If the execution was successful, users will see a message "true" returned in the window.
+```powershell
+dotnet sitecore spe --script-id "{11CE538E-5EA9-481A-8506-30F7DB03F308}"
+```
 
-![Sitecore gohorse execution](docs/images/sitecore-gohorse-execution.png?raw=true "Sitecore gohorse execution")
+### CASE 2 - Run a Powershell Script file from your local
 
-When execution finishes you will be able to see that the PowerShell script has updated the home item, title field, adding the text "1" to its value.
-![Sitecore Home Updated](docs/images/Sitecore-Home-updated.png?raw=true "Sitecore Home Updated")
+Local PS1 files can also be executed inside the Sitecore CM instance:
 
-#GoHorse
+```powershell
+dotnet sitecore spe --file .\test.ps1
+```
+
+### CASE 3 - Run Inline Powershell commands
+
+Local PS1 files can also be executed inside the Sitecore CM instance (Make sure you escape the strings accordingly):
+
+```powershell
+dotnet sitecore spe --script "`$test='ABC'; Write-Host `$test;"
+```
 
 
-![Hackathon Logo](docs/images/hackathon.png?raw=true "Hackathon Logo")
+### CASE 4 - Control multiple Powershell sessions
+
+Multiple Powershell sessions can be controlled with the *--session* parameter.
+
+For instance, you can instantiate the same variable with different values, using different sessions:
+
+```powershell
+dotnet sitecore spe --session "session1" --script "`$test='ABC';"
+dotnet sitecore spe --session "session2" --script "`$test='XYZ';"
+```
+Then you print the variable in different sessions:
+
+```powershell
+dotnet sitecore spe --session "session1" --script 'Write-Host $test'
+dotnet sitecore spe --session "session2" --script 'Write-Host $test'
+```
+
+Will result as below:
+
+```powershell
+Results: PowerShell script successful executed Write-Host $test
+ABC
+Results: PowerShell script successful executed Write-Host $test
+XYZ
+```
