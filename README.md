@@ -12,7 +12,7 @@ This module was originally an entry at the Sitecore Hackathon 2022 ([Click here 
 ## Description
 ⟹ This module extends the Sitecore CLI, adding a new command named "spe" (Sitecore Powershell Extensions)
 
-From the command prompt, you can now run SPE scripts on Sitecore instances.
+From the command prompt, you can now run SPE scripts remotely within Sitecore instances.
 
 ## TOC
 
